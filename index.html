@@ -36,6 +36,20 @@
 //        }
 //        var x = document.getElementById("taylors-anthem").autoplay;
 //        console.log(x)
+        var images = ["0009","1566","6708","6709","6710","6711"
+                      ,"6712","6713","6714","6715","6716","6717","67081"]
+        var index = 0;
+        var play = false;
+        var num_images = images.length;
+        function changeImage(){
+            var rand = Math.random() * num_images;
+            console.log(Math.floor(rand));
+            var randimg = document.getElementById('randimg');
+            randimg.src = "images/IMG_"+images[index%num_images]+".JPG";
+            index++;
+            
+            
+        }
     </script>
     
     <body>
@@ -45,7 +59,12 @@
                 <div id="intro">
                     <div id="giant-name">Taylor Sumile</div>
                     "I ain't got no license and I ain't never gon get no license" - Lil Tay
-                    <br>
+                    <br><br>
+                    <button onclick="playAnthem()"> 
+                        <img src="images/music.png" style="height:20px;">
+                        <img src="images/music.png" style="height:20px;">
+                        <img src="images/music.png" style="height:20px;">
+                    </button>
 
                 </div>
             </div>
@@ -59,8 +78,14 @@
                 </div>
                 <div class="row1" id="am1">
                     <div id="about_me">
-                        <h2>Who am I?</h2>
-                       you know my swag not my story
+                        <h2 style="text-align: center">About Me</h2>
+                       Your friendly neighborhood Loan Servicing Specialist.
+<!--
+                        <h3 style="text-align: center">Likes</h3>
+                       Anime. Small things. Japan. 
+                        <h3 style="text-align: center">Disikes</h3>
+                       Everything else.
+-->
                         
                     </div>
                 </div>
@@ -68,24 +93,47 @@
         </div>
         <div class="section" id="s3">
             
+            <div class="wrapper" >
 <!--
-            <div class="wrapper" id="w2">
-                <h1 style="text-align: center"> Skills </h1>
-                <div class="row1 skills" id="skills_languages">
-                    <h2 class="header-skills">Languages</h2>
+                <div class="row1">
+                    <img src="images/IMG_0009.JPG" id="randimg">
                 </div>
-                <div class="row1 skills">
-                    <h2 class="header-skills">Frameworks</h2>
-                </div>
-                <div class="row1 skills" id="skills_tools">
-                    <h2 class="header-skills">Technologies</h2>
+-->
+                <div class="row1" >
+                    <div id="skills">
+                        
+                        <h2 style="text-align: center">Skills</h2>
+<!--
+                        <ul>
+                            <li>D.E.N.N.I.S. System Expert</li>
+                            <li>Expert Co-Pilot/Car DJ</li>
+                        </ul>
+-->
+                        
+                    </div>
                 </div>
             </div>
--->
+
+        </div>
+        <div class="section" id="s4">
+
+            <div class="wrapper" >
+                <div class="row1">
+                    <img src="images/IMG_0009.JPG" id="randimg">
+                </div>
+                <div class="row1" >
+                    <div id="skills">
+
+                        <h2 style="text-align: center"><button onclick="changeImage()">See Me</button></h2>
+                
+
+                    </div>
+                </div>
+            </div>
 
         </div>
         <div class="footer">
-            <audio autoplay id="taylors-anthem">
+            <audio id="taylors-anthem">
                 <source src="audio/goodies.mp3" type="audio/mpeg">
                 No  Work
             </audio>
@@ -94,6 +142,18 @@
 
     <script>
 
+        function playAnthem(){
+            var anthem  = document.getElementById('taylors-anthem');
+            if(play){
+                anthem.pause();
+                play = false;
+            }
+            else {
+                anthem.play();  
+                play = true;
+            }
+            
+        }
     </script>
 
 </html>

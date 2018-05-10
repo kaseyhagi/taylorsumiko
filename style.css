@@ -68,6 +68,13 @@ body {
     border-radius: 50%; 
     opacity:0.9;
 }
+
+#randimg {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%; 
+    opacity:0.9;
+}
 #about_me{
     height: 320px;
     width: 500px;
@@ -75,6 +82,7 @@ body {
     border-radius: 25px;
     padding: 40px;
     opacity:0.78;
+    font-size: 20px;
  
 }
 
@@ -106,7 +114,7 @@ body {
 
 
 }
-@media (min-width: 500px) {
+@media (min-width: 200px) {
     #w1 {
         grid-template-columns: auto;
         grid-template-areas: 
@@ -120,4 +128,11 @@ body {
 }
 #s2 {
     background-color: #353638;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
 }
