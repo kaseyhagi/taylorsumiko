@@ -8,31 +8,32 @@
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-        <script src="info.js"></script>
+        <script src="tay-info.js"></script>
+
     </head>
     <script>
-        function writeIntro(){
-            var intro = document.getElementById('intro');
-//            intro.textContent = info.intro;
-            intro.innerHTML += info.intro;
-//            intro.innerHTML += "<span style='font-weight:bold'>Kasey Hagi</span>";
-//            intro.innerHTML += info.intro.bio;
-//            console.log(info.intro);
-        }
-        function writeSkills(){
-            var div_lang = document.getElementById('skills_languages');
-            div_lang.innerHTML += '<ul>';
-            for(var i = 0; i < info.skills.languages.length; i++){
-                div_lang.innerHTML += '<li>' + info.skills.languages[i] +'</li>';
-            }
-            div_lang.innerHTML += '</ul>';
-            var div_tools = document.getElementById('skills_tools');
-            div_tools.innerHTML += '<ul>';
-            for(var i = 0; i < info.skills.tools.length; i++){
-                div_tools.innerHTML += '<li>' + info.skills.tools[i] +'</li>';
-            }
-            div_tools.innerHTML += '</ul>';
-        }
+//        function writeIntro(){
+//            var intro = document.getElementById('intro');
+////            intro.textContent = info.intro;
+//            intro.innerHTML += info.intro;
+////            intro.innerHTML += "<span style='font-weight:bold'>Kasey Hagi</span>";
+////            intro.innerHTML += info.intro.bio;
+////            console.log(info.intro);
+//        }
+//        function writeSkills(){
+//            var div_lang = document.getElementById('skills_languages');
+//            div_lang.innerHTML += '<ul>';
+//            for(var i = 0; i < info.skills.languages.length; i++){
+//                div_lang.innerHTML += '<li>' + info.skills.languages[i] +'</li>';
+//            }
+//            div_lang.innerHTML += '</ul>';
+//            var div_tools = document.getElementById('skills_tools');
+//            div_tools.innerHTML += '<ul>';
+//            for(var i = 0; i < info.skills.tools.length; i++){
+//                div_tools.innerHTML += '<li>' + info.skills.tools[i] +'</li>';
+//            }
+//            div_tools.innerHTML += '</ul>';
+//        }
     </script>
     
     <body>
@@ -95,8 +96,8 @@
             
         };
 //        adjustRow(about_me_row);
-        writeIntro();
-        writeSkills();
+//        writeIntro();
+//        writeSkills();
     </script>
 
 </html>
