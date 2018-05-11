@@ -1,4 +1,5 @@
 var info = {
-    intro: "u know my swag not my story"
+    intro: "u know my swag not my story",
+    skills: []
     
 };
