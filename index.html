@@ -12,28 +12,28 @@
 
     </head>
     <script>
-//        function writeIntro(){
-//            var intro = document.getElementById('intro');
-////            intro.textContent = info.intro;
-//            intro.innerHTML += info.intro;
-////            intro.innerHTML += "<span style='font-weight:bold'>Kasey Hagi</span>";
-////            intro.innerHTML += info.intro.bio;
-////            console.log(info.intro);
-//        }
-//        function writeSkills(){
-//            var div_lang = document.getElementById('skills_languages');
-//            div_lang.innerHTML += '<ul>';
-//            for(var i = 0; i < info.skills.languages.length; i++){
-//                div_lang.innerHTML += '<li>' + info.skills.languages[i] +'</li>';
-//            }
-//            div_lang.innerHTML += '</ul>';
+        function writeIntro(){
+            var intro = document.getElementById('about_me');
+//            intro.textContent = info.intro;
+            intro.innerHTML += info.intro;
+//            intro.innerHTML += "<span style='font-weight:bold'>Kasey Hagi</span>";
+//            intro.innerHTML += info.intro.bio;
+//            console.log(info.intro);
+        }
+        function writeSkills(){
+            var skills = document.getElementById('skills');
+            skills.innerHTML += '<ul>';
+            for(var i = 0; i < info.skills.length; i++){
+                skills.innerHTML += '<li>' + info.skills[i] +'</li>';
+            }
+            skills.innerHTML += '</ul>';
 //            var div_tools = document.getElementById('skills_tools');
 //            div_tools.innerHTML += '<ul>';
 //            for(var i = 0; i < info.skills.tools.length; i++){
 //                div_tools.innerHTML += '<li>' + info.skills.tools[i] +'</li>';
 //            }
 //            div_tools.innerHTML += '</ul>';
-//        }
+        }
 //        var x = document.getElementById("taylors-anthem").autoplay;
 //        console.log(x)
         var images = ["0009","1566","6708","6709","6710","6711"
@@ -79,13 +79,8 @@
                 <div class="row1" id="am1">
                     <div id="about_me">
                         <h2 style="text-align: center">About Me</h2>
-                       Your friendly neighborhood Loan Servicing Specialist.
-<!--
-                        <h3 style="text-align: center">Likes</h3>
-                       Anime. Small things. Japan. 
-                        <h3 style="text-align: center">Disikes</h3>
-                       Everything else.
--->
+<!--                       Javascript insert bio here .-->
+
                         
                     </div>
                 </div>
@@ -94,26 +89,12 @@
         <div class="section" id="s3">
             
             <div class="wrapper" >
-<!--
-                <div class="row1">
-                    <img src="images/IMG_0009.JPG" id="randimg">
-                </div>
--->
+
                 <div class="row1" >
                     <div id="skills">
                         
                         <h2 style="text-align: center">Skills</h2>
-                        <ul>
-                            <li>Screening calls</li>
-                            <li>Listens to the same 5 songs </li>
-                            <li>On again/off again ho</li>
-                            <li>Impulse shopping</li>
-                            <li>Calling out of work</li>
-                            <li>Early to everything</li>
-                            
-                             
-                        </ul>
-                        
+<!--                        Javascript insert skills list here -->
                     </div>
                 </div>
             </div>
@@ -145,7 +126,8 @@
     </body>
 
     <script>
-
+        writeIntro();
+        writeSkills();
         function playAnthem(){
             var anthem  = document.getElementById('taylors-anthem');
             if(play){
