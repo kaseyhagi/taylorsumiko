@@ -4,9 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Kasey Hagi</title>
+        <title>Taylor Sumile</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <script src="tay-info.js"></script>
 
@@ -14,11 +15,7 @@
     <script>
         function writeIntro(){
             var intro = document.getElementById('about_me');
-//            intro.textContent = info.intro;
             intro.innerHTML += info.intro;
-//            intro.innerHTML += "<span style='font-weight:bold'>Kasey Hagi</span>";
-//            intro.innerHTML += info.intro.bio;
-//            console.log(info.intro);
         }
         function writeSkills(){
             var skills = document.getElementById('skills');
@@ -27,17 +24,8 @@
                 skills.innerHTML += '<li>' + info.skills[i] +'</li>';
             }
             skills.innerHTML += '</ul>';
-//            var div_tools = document.getElementById('skills_tools');
-//            div_tools.innerHTML += '<ul>';
-//            for(var i = 0; i < info.skills.tools.length; i++){
-//                div_tools.innerHTML += '<li>' + info.skills.tools[i] +'</li>';
-//            }
-//            div_tools.innerHTML += '</ul>';
         }
-//        var x = document.getElementById("taylors-anthem").autoplay;
-//        console.log(x)
-        var images = ["0009","1566","6708","6709","6710","6711"
-                      ,"6712","6713","6714","6715","6716","6717","67081"]
+        var images = info.images;
         var index = 0;
         var play = false;
         var num_images = images.length;
@@ -46,9 +34,17 @@
             console.log(Math.floor(rand));
             var randimg = document.getElementById('randimg');
             randimg.src = "images/IMG_"+images[index%num_images]+".JPG";
-            index++;
-            
-            
+            index++;   
+        }
+        function fillCarousel(){
+            // fill images in carousel
+            var img_id = info.images;
+            var carousel = document.getElementById('carousel');
+            for(var i = 0; i < img_id.length; i++){
+                carousel.innerHTML+= '<img class="mySlides" src="'
+                    + 'images/IMG_'+img_id[i]+'.JPG" style="height:400px; margin:auto">';
+            }
+            carousel.innerHTML+= '<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button><button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>';
         }
     </script>
     
@@ -102,6 +98,7 @@
         </div>
         <div class="section" id="s4">
 
+<!--
             <div class="wrapper" >
                 <div class="row1">
                     <img src="images/IMG_0009.JPG" id="randimg">
@@ -115,8 +112,11 @@
                     </div>
                 </div>
             </div>
-
+-->
+            <div class="w3-content w3-display-container" id="carousel">
+            </div>
         </div>
+
         <div class="footer">
             <audio id="taylors-anthem">
                 <source src="audio/goodies.mp3" type="audio/mpeg">
@@ -128,6 +128,7 @@
     <script>
         writeIntro();
         writeSkills();
+        fillCarousel();
         function playAnthem(){
             var anthem  = document.getElementById('taylors-anthem');
             if(play){
@@ -137,8 +138,24 @@
             else {
                 anthem.play();  
                 play = true;
-            }
-            
+            }  
+        }
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
         }
     </script>
 
