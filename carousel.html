@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kasey Hagi</title>
+        <meta name="description" content="An Introduction to Taylor">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+        <script src="tay-info.js"></script>
+        
+
+    </head>
+    <script>
+
+    </script>
+    <body>
+        
+        <div class="w3-content" id="carousel">
+        </div>
+
+        <script>
+            // fill images in carousel
+            var img_id = info.images;
+            var carousel = document.getElementById('carousel');
+            for(var i = 0; i < img_id.length; i++){
+                carousel.innerHTML+= '<img class="mySlides" src="'
+                    + 'images/IMG_'+img_id[i]+'.JPG" style="height:400px; margin:auto">';
+            }
+            carousel.innerHTML+= '<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button><button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>';
+            console.log(carousel.innerHTML);
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        </script>
+    </body>
+</html>
